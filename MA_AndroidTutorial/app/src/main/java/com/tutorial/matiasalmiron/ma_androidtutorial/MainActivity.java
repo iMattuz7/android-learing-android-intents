@@ -1,5 +1,6 @@
 package com.tutorial.matiasalmiron.ma_androidtutorial;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,9 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +22,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Toast.makeText(MainActivity.this,"onCreate",Toast.LENGTH_LONG).show();
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+//       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+        button = (Button)findViewById(R.id.Activity1Button);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this,SecondAcitivity.class);
+                startActivity(myIntent);
             }
         });
     }
@@ -54,26 +66,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        Toast.makeText(MainActivity.this,"onStart",Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this,"onStart",Toast.LENGTH_LONG).show();
 
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        Toast.makeText(MainActivity.this,"onResume",Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this,"onResume",Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        Toast.makeText(MainActivity.this,"onPause",Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this,"onPause",Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onStop(){
         super.onStop();
-        Toast.makeText(MainActivity.this,"onStop",Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this,"onStop",Toast.LENGTH_LONG).show();
     }
 
     @Override
