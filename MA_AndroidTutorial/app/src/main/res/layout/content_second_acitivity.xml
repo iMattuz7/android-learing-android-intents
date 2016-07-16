@@ -50,5 +50,20 @@
         app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
         app:layout_constraintTop_toBottomOf="@+id/shareText"></Button>
 
+    <Button
+        android:id="@+id/activitY2SelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image"
+        android:onClick="click"
+        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
+        app:layout_constraintTop_toBottomOf="@+id/activity2Button"></Button>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity2Image"
+        app:layout_constraintBottom_toBottomOf="@+id/content_second_acitivity"/>
+
 
 </android.support.constraint.ConstraintLayout>

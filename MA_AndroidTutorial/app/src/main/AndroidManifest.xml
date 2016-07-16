@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.tutorial.matiasalmiron.ma_androidtutorial">
 
     <application
@@ -21,7 +22,14 @@
         <activity
             android:name="com.tutorial.matiasalmiron.ma_androidtutorial.SecondAcitivity"
             android:label="@string/title_activity_second_acitivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:mimeType="text/html"></data>
+            </intent-filter>
+        </activity>
+
         <service android:name=".myService"></service>
     </application>
 
