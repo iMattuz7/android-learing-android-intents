@@ -28,6 +28,7 @@ public class SecondAcitivity extends AppCompatActivity  {
     Button stopSrv;
     Button shareSrv;
     Button pickImage;
+    Button goTo3;
     EditText shareText;
     AppCompatImageView imageView;
 
@@ -44,6 +45,7 @@ public class SecondAcitivity extends AppCompatActivity  {
         shareSrv = (Button)findViewById(R.id.activitY2ShareButton);
         shareText = (EditText)findViewById(R.id.shareText);
         pickImage = (Button)findViewById(R.id.activitY2SelectImage);
+        goTo3 = (Button)findViewById(R.id.activity2Go3);
 
 
 
@@ -96,6 +98,14 @@ public class SecondAcitivity extends AppCompatActivity  {
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 setResult(RESULT_OK, intent);
                 startActivityForResult(intent,REQUEST_CODE);
+            }
+        });
+
+        goTo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SecondAcitivity.this,Chapter04Activity.class);
+                startActivity(i);
             }
         });
 

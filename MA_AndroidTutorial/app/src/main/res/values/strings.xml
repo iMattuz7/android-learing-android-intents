@@ -2,4 +2,5 @@
     <string name="app_name">MA_AndroidTutorial</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_second_acitivity">SecondAcitivity</string>
+    <string name="title_activity_chapter04">Chapter04Activity</string>
 </resources>
