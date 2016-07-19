@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tutorial.matiasalmiron.ma_androidtutorial">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-feature android:name="android.hardware.camera2"></uses-feature>
 
 
     <application

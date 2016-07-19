@@ -15,6 +15,24 @@
         android:id="@+id/chapter4OpenWifiButton"
         android:text="Open Wifi"
         app:layout_constraintCenterX_toCenterX="@+id/content_chapter04"
-        app:layout_constraintCenterY_toCenterY="@+id/content_chapter04"/>
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chapter4Photo"
+        android:text="Photo"
+        app:layout_constraintCenterX_toCenterX="@+id/content_chapter04"
+        app:layout_constraintTop_toBottomOf="@+id/chapter4OpenWifiButton"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chapter4PhotoView"
+        android:text="Photo"
+        app:layout_constraintCenterX_toCenterX="@+id/content_chapter04"
+        app:layout_constraintTop_toBottomOf="@+id/chapter4Photo"
+        />
 
 </android.support.constraint.ConstraintLayout>
