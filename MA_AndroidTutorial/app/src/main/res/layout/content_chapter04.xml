@@ -9,4 +9,12 @@
     tools:context="com.tutorial.matiasalmiron.ma_androidtutorial.Chapter04Activity"
     tools:showIn="@layout/activity_chapter04">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chapter4OpenWifiButton"
+        android:text="Open Wifi"
+        app:layout_constraintCenterX_toCenterX="@+id/content_chapter04"
+        app:layout_constraintCenterY_toCenterY="@+id/content_chapter04"/>
+
 </android.support.constraint.ConstraintLayout>

@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tutorial.matiasalmiron.ma_androidtutorial">
-    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
 
     <application
         android:allowBackup="true"
@@ -41,6 +41,13 @@
             android:name=".Chapter04Activity"
             android:label="@string/title_activity_chapter04"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <receiver android:name=".NetworkStatusReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"></action>
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

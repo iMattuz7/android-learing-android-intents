@@ -5,15 +5,18 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class Chapter04Activity extends AppCompatActivity {
 private final int BLUETOOTH_RESULT_OK = 0;
+    Button openWifi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +34,16 @@ private final int BLUETOOTH_RESULT_OK = 0;
                         .setAction("Action", null).show();
             }
         });
-        //register receiver
-        registerReceiver(new BluetoothStateReceiver(),new IntentFilter(
-                BluetoothAdapter.ACTION_STATE_CHANGED));
+        openWifi = (Button)findViewById(R.id.chapter4OpenWifiButton);
+        openWifi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Abro lo settings de l wifi
+                Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                startActivity(i);
+            }
+        });
 
-        String enableBlueTooth = BluetoothAdapter.ACTION_REQUEST_ENABLE;
-        Intent i = new Intent(enableBlueTooth);
-        startActivityForResult(i,BLUETOOTH_RESULT_OK);
     }
 
     @Override
