@@ -14,59 +14,16 @@
         android:id="@+id/activity2Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Close"
+        android:text="Video Capture"
         app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
         app:layout_constraintCenterY_toCenterY="@+id/content_second_acitivity"></Button>
 
-    <Button
-        android:id="@+id/activity2StartButton"
+    <VideoView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"></Button>
+        android:id="@+id/videoView"
+        app:layout_constraintBottom_toTopOf="@+id/activity2Button"/>
 
-    <Button
-        android:id="@+id/activity2StopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stop"
-
-        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
-        app:layout_constraintTop_toBottomOf="@+id/activity2StartButton"></Button>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/shareText"
-        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
-        app:layout_constraintTop_toBottomOf="@+id/activity2StopButton"/>
-    <Button
-        android:id="@+id/activitY2ShareButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Share"
-        android:onClick="click"
-        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
-        app:layout_constraintTop_toBottomOf="@+id/shareText"></Button>
-
-    <Button
-        android:id="@+id/activitY2SelectImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Image"
-        android:onClick="click"
-        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
-        app:layout_constraintTop_toBottomOf="@+id/activity2Button"></Button>
-
-    <Button
-        android:id="@+id/activity2Go3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to 3"
-        android:onClick="click"
-        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
-        app:layout_constraintTop_toBottomOf="@+id/activitY2SelectImage"></Button>
 
     <android.support.v7.widget.AppCompatImageView
         android:layout_width="wrap_content"
