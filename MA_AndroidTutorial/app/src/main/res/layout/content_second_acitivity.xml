@@ -18,18 +18,37 @@
         app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"
         app:layout_constraintCenterY_toCenterY="@+id/content_second_acitivity"></Button>
 
-    <VideoView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/videoView"
-        app:layout_constraintBottom_toTopOf="@+id/activity2Button"/>
+        android:id="@+id/speachText"
+        android:text="recognize"
+        app:layout_constraintBottom_toTopOf="@+id/activity2Button"
+        app:layout_constraintCenterX_toCenterX="@+id/activity2Button"/>
 
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/talkText"
+        android:text="recognize"
+        app:layout_constraintTop_toBottomOf="@+id/activity2Button"
+        app:layout_constraintCenterX_toCenterX="@+id/activity2Button"/>
+
+    <Button
+        android:id="@+id/textSpeachButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text Speach"
+        app:layout_constraintTop_toBottomOf="@+id/talkText"
+        app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"></Button>
 
     <android.support.v7.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/activity2Image"
         app:layout_constraintBottom_toBottomOf="@+id/content_second_acitivity"/>
+
 
 
 </android.support.constraint.ConstraintLayout>
