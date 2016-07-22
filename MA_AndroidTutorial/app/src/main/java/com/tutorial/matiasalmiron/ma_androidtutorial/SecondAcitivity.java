@@ -29,10 +29,12 @@ public class SecondAcitivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_acitivity);
+        Intent i = getIntent();
         videoButton = (Button)findViewById(R.id.activity2Button);
         editTxt = (EditText) findViewById(R.id.speachText);
         speachButton = (Button)findViewById(R.id.textSpeachButton);
         speachTxt = (EditText) findViewById(R.id.talkText);
+
 
         videoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +55,13 @@ public class SecondAcitivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent i = getIntent();
+        editTxt.setText(i.getExtras().get("VALUE1").toString());
     }
 
     @Override

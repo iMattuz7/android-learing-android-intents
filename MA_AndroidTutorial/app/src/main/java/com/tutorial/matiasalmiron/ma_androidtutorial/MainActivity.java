@@ -10,10 +10,15 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-Button button;
+    EditText edit1;
+    EditText edit2;
+    EditText edit3;
+
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +26,7 @@ Button button;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Toast.makeText(MainActivity.this,"onCreate",Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "onCreate", Toast.LENGTH_LONG).show();
 //       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -31,11 +36,23 @@ Button button;
 //            }
 //        });
 
-        button = (Button)findViewById(R.id.Activity1Button);
+        button = (Button) findViewById(R.id.Activity1Button);
+        edit1 = (EditText)findViewById(R.id.edittext1);
+        edit2 = (EditText)findViewById(R.id.edittext1);
+        edit3 = (EditText)findViewById(R.id.edittext1);
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this,SecondAcitivity.class);
+                final String txtToTransfer1 = edit1.getText().toString();
+                final String txtToTransfer2 = edit2.getText().toString();
+                final String txtToTransfer3 = edit3.getText().toString();
+                Intent myIntent = new Intent(MainActivity.this, SecondAcitivity.class);
+                myIntent.putExtra("VALUE1",txtToTransfer1);
+                myIntent.putExtra("VALUE2",txtToTransfer2);
+                myIntent.putExtra("VALUE3",txtToTransfer3);
                 startActivity(myIntent);
             }
         });
@@ -64,33 +81,33 @@ Button button;
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         //Toast.makeText(MainActivity.this,"onStart",Toast.LENGTH_LONG).show();
 
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         //Toast.makeText(MainActivity.this,"onResume",Toast.LENGTH_LONG).show();
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         //Toast.makeText(MainActivity.this,"onPause",Toast.LENGTH_LONG).show();
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         super.onStop();
         //Toast.makeText(MainActivity.this,"onStop",Toast.LENGTH_LONG).show();
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(MainActivity.this,"onDestroy",Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "onDestroy", Toast.LENGTH_LONG).show();
     }
 }

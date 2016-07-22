@@ -10,21 +10,37 @@
     tools:showIn="@layout/activity_main"
     tools:context="com.tutorial.matiasalmiron.ma_androidtutorial.MainActivity">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Activirt1TextView"
+        android:id="@+id/edittext1"
         android:text="Tutorial de Android - MA"
-        app:layout_constraintBottom_toBottomOf="@+id/content_main"
-        app:layout_constraintLeft_toLeftOf="@+id/content_main"
-        app:layout_constraintRight_toRightOf="@+id/content_main"
-        app:layout_constraintTop_toTopOf="@+id/content_main" />
+        app:layout_constraintCenterY_toCenterY="@+id/content_main"
+        app:layout_constraintCenterX_toCenterX="@+id/content_main"/>
+
+    <EditText
+        android:id="@+id/edittext2"
+        android:text="uhh lala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        app:layout_constraintCenterX_toCenterX="@+id/content_main"
+        app:layout_constraintTop_toBottomOf="@id/edittext1"/>
+
+    <EditText
+        android:id="@+id/edittext3"
+        android:text="a tu vieja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        app:layout_constraintCenterX_toCenterX="@+id/content_main"
+        app:layout_constraintTop_toBottomOf="@id/edittext2"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Call"
-        app:layout_constraintTop_toBottomOf="@+id/Activirt1TextView"
+        app:layout_constraintTop_toBottomOf="@+id/edittext3"
         app:layout_constraintLeft_toLeftOf="@+id/content_main"
         app:layout_constraintRight_toRightOf="@+id/content_main"
         android:id="@+id/Activity1Button"/>
