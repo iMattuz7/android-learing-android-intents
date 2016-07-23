@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 final String txtToTransfer2 = edit2.getText().toString();
                 final String txtToTransfer3 = edit3.getText().toString();
                 Intent myIntent = new Intent(MainActivity.this, SecondAcitivity.class);
+                Bundle myBundle = new Bundle();
+                myBundle.putString("Value4",txtToTransfer1);
                 myIntent.putExtra("VALUE1",txtToTransfer1);
                 myIntent.putExtra("VALUE2",txtToTransfer2);
                 myIntent.putExtra("VALUE3",txtToTransfer3);
+                myIntent.putExtras(myBundle);
                 startActivity(myIntent);
             }
         });

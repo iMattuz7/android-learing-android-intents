@@ -61,7 +61,7 @@ public class SecondAcitivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Intent i = getIntent();
-        editTxt.setText(i.getExtras().get("VALUE1").toString());
+        editTxt.setText(i.getStringExtra("Value4"));
     }
 
     @Override
