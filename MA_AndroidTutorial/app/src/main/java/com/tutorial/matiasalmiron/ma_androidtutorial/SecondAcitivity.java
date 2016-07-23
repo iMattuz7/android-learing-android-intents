@@ -60,8 +60,9 @@ public class SecondAcitivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Intent i = getIntent();
-        editTxt.setText(i.getStringExtra("Value4"));
+
+        Person myPerson = getIntent().getParcelableExtra("NEW_PERSON");
+        editTxt.setText(myPerson.getName());
     }
 
     @Override

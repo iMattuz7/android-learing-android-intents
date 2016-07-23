@@ -2,8 +2,6 @@ package com.tutorial.matiasalmiron.ma_androidtutorial;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -17,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     EditText edit1;
     EditText edit2;
     EditText edit3;
-
     Button button;
 
     @Override
@@ -40,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         edit1 = (EditText)findViewById(R.id.edittext1);
         edit2 = (EditText)findViewById(R.id.edittext1);
         edit3 = (EditText)findViewById(R.id.edittext1);
+        final Person myPerson = new Person();
 
 
 
@@ -49,13 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 final String txtToTransfer1 = edit1.getText().toString();
                 final String txtToTransfer2 = edit2.getText().toString();
                 final String txtToTransfer3 = edit3.getText().toString();
+                myPerson.setName(txtToTransfer1);
+                myPerson.setAddress(txtToTransfer2);
                 Intent myIntent = new Intent(MainActivity.this, SecondAcitivity.class);
-                Bundle myBundle = new Bundle();
-                myBundle.putString("Value4",txtToTransfer1);
-                myIntent.putExtra("VALUE1",txtToTransfer1);
-                myIntent.putExtra("VALUE2",txtToTransfer2);
-                myIntent.putExtra("VALUE3",txtToTransfer3);
-                myIntent.putExtras(myBundle);
+                myIntent.putExtra("NEW_PERSON",myPerson);
+
                 startActivity(myIntent);
             }
         });
