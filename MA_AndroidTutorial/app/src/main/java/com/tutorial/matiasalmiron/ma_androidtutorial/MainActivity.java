@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 public class MainActivity extends AppCompatActivity {
     EditText edit1;
     EditText edit2;
@@ -41,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +63,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void serializeObject(){
+        Person p = new Person();
+        p.setAddress("asdasd");
+        p.setName("qweqwe");
+        try{
+            FileOutputStream fs = new FileOutputStream("/tmp/person_data.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fs);
+            out.writeObject(p);
+            out.close();
+            fs.close();
+
+        }catch (Exception e){
+
+        }
+    }
+
+    private Person deserializeObject(){
+        Person p = null;
+        try{
+            FileInputStream fis = new FileInputStream("/tmp/person_data.ser");
+            ObjectInputStream in = new ObjectInputStream(fis);
+            p = (Person)in.readObject();
+            in.close();
+            fis.close();
+        }catch (Exception e){
+
+        }
+        return p;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
