@@ -2,6 +2,7 @@ package com.tutorial.matiasalmiron.ma_androidtutorial;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -20,6 +21,8 @@ public class SecondAcitivity extends AppCompatActivity {
     EditText editTxt;
     TextToSpeech ttobj;
     Button speachButton;
+    Button openWebButton;
+    Button openMapButton;
     EditText speachTxt;
     private final int SPEAK = 1;
     private final int VAL_DATA =2;
@@ -34,6 +37,8 @@ public class SecondAcitivity extends AppCompatActivity {
         editTxt = (EditText) findViewById(R.id.speachText);
         speachButton = (Button)findViewById(R.id.textSpeachButton);
         speachTxt = (EditText) findViewById(R.id.talkText);
+        openMapButton = (Button)findViewById(R.id.mapButton);
+        openWebButton = (Button)findViewById(R.id.webButton);
 
 
         videoButton.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +57,24 @@ public class SecondAcitivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
                 startActivityForResult(i,VAL_DATA);
+            }
+        });
+
+        openMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = "geo:-34.4937025,-58.5770825";
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(i);
+            }
+        });
+
+        openWebButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "www.google.com";
+                Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                startActivity(i);
             }
         });
 

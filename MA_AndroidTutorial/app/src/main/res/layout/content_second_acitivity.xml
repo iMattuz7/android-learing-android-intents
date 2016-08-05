@@ -43,6 +43,22 @@
         app:layout_constraintTop_toBottomOf="@+id/talkText"
         app:layout_constraintCenterX_toCenterX="@+id/content_second_acitivity"></Button>
 
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Map"
+        app:layout_constraintBottom_toTopOf="@+id/speachText"
+        app:layout_constraintLeft_toRightOf="@+id/speachText"></Button>
+
+    <Button
+        android:id="@+id/webButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Web"
+        app:layout_constraintBottom_toTopOf="@+id/speachText"
+        app:layout_constraintRight_toLeftOf="@+id/speachText"></Button>
+
     <android.support.v7.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
